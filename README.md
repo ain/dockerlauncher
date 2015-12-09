@@ -17,6 +17,12 @@ curl -L https://github.com/ain/dockerlauncher/raw/master/dockerlauncher > /etc/i
 chmod +x /etc/init.d/dockerlauncher
 ```
 
+To launch services on every boot:
+
+```
+update-rc.d dockerlauncher defaults
+```
+
 ## Licence
 
 Copyright © 2015 Ain Tohvri. Licenced under [GPL-3](LICENSE).
