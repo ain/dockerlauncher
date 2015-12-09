@@ -4,6 +4,7 @@ Docker Compose services starter for Debian init system.
 
 ## Requirements
 
+- Debian OS
 - Source code of project(s) installed in separate `/var/www/<website>` folders
 - Every project includes Docker Compose file, e.g. `/var/www/<website>/docker-compose.yml`
 
