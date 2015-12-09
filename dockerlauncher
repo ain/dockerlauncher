@@ -1,0 +1,34 @@
+#!/bin/bash
+# /etc/init.d/dockerlauncher
+
+# TODO: ensure Docker is installed.
+# TODO: ensure Docker Compose is installed.
+
+case "$1" in
+  start)
+    echo "Starting script Docker containers"
+    for i in /var/www/* ; do
+      if [[ -d "$i" && -f "$i/docker-compose.yml" ]]; then
+        cd $i
+        echo "$i ..."
+        #docker-compose up -d
+      fi
+    done
+    ;;
+  stop)
+    echo "Stopping Docker containers"
+    for i in /var/www/* ; do
+      if [[ -d "$i" && -f "$i/docker-compose.yml" ]]; then
+        cd $i
+        echo "$i ..."
+        #docker-compose stop
+      fi
+    done
+    ;;
+  *)
+    echo "Usage: /etc/init.d/dockerlauncher {start|stop}"
+    exit 1
+  ;;
+esac
+
+exit 0
